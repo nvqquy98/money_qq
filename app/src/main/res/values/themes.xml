@@ -1,0 +1,46 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.moneyqq" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="android:windowBackground">@drawable/background_app</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/zircon</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Text View Style here -->
+    <style name="TextCommonApp" parent="Theme.moneyqq">
+        <item name="android:textColor">@color/comet</item>
+        <item name="android:textSize">@dimen/dp_12</item>
+    </style>
+
+    <style name="TextViewBold" parent="TextCommonApp">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextViewItalic" parent="TextCommonApp">
+        <item name="android:fontFamily">@font/roboto_italic</item>
+    </style>
+
+    <style name="TextViewRegular" parent="TextCommonApp">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextViewMedium" parent="TextCommonApp">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!-- Shadow view sytle here -->
+    <style name="View.Shadow" parent="Theme.moneyqq">
+        <item name="android:elevation">@dimen/dp_8</item>
+        <item name="android:translationZ">@dimen/dp_8</item>
+    </style>
+</resources>
