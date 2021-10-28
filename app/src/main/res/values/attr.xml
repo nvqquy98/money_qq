@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ConstraintLayoutCustom">
+        <attr name="topStartRadius" format="dimension" />
+        <attr name="topEndRadius" format="dimension" />
+        <attr name="bottomStartRadius" format="dimension" />
+        <attr name="bottomEndRadius" format="dimension" />
+        <attr name="topRadius" format="dimension" />
+        <attr name="bottomRadius" format="dimension" />
+        <attr name="startRadius" format="dimension" />
+        <attr name="endRadius" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="blurShadow" format="dimension" />
+        <attr name="xShadow" format="float" />
+        <attr name="yShadow" format="float" />
+        <attr name="shadowColor" format="color" />
+        <attr name="backgroundFill" format="color" />
+        <attr name="arrow" format="enum">
+            <enum name="none" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="both" value="3" />
+        </attr>
+        <attr name="isShadowHorizontal" format="boolean" />
+        <attr name="arrowSize" format="dimension" />
+    </declare-styleable>
+</resources>
