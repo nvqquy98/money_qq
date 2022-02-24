@@ -12,19 +12,19 @@ class ConstraintLayoutMainApp @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : ConstraintLayout(context, attrs) {
     init {
-        background = ContextCompat.getDrawable(context,R.drawable.background_main_app)
+        background = ContextCompat.getDrawable(context,R.drawable.bg_main_app)
     }
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
     }
 
     fun hiddenNavigationAnimation() {
-        background = ContextCompat.getDrawable(context, R.drawable.background_main_app)
+        background = ContextCompat.getDrawable(context, R.drawable.bg_main_app)
         loadAnimation(R.animator.tranform_hiden_navigation)
     }
 
     fun showNavigationAnimation() {
-        background = ContextCompat.getDrawable(context, R.drawable.background_main_app_corner)
+        background = ContextCompat.getDrawable(context, R.drawable.bg_main_app_corner)
         loadAnimation(R.animator.tranform_show_navigation)
 
     }

@@ -1,6 +1,6 @@
 package com.nvqquy98.moneyqq.domain.usecase.base
 
-import com.nvqquy98.moneyqq.util.croutine.ControlledRunner
+import com.nvqquy98.moneyqq.util.coroutine.ControlledRunner
 
 abstract class BaseCancelableUseCase<Input : BaseInput, Output> :
     BaseNonFlowUseCase<Input, Output>() {

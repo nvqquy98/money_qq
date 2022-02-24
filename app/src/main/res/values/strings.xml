@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Money QQ</string>
+    <string name="money_qq_welcome">MONEY QQ\n \u0020 \u0020\u0020\u0020 Xin chào</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forget_password">Quên mật khẩu ?</string>
+    <string name="do_you_not_have_account">Bạn không có tài khoản ?</string>
+    <string name="filed_not_empty">Không được để trống.</string>
+    <string name="incorrect_password_format">Mật khẩu không đúng định dạng.</string>
+    <string name="incorrect_email_format">Email không đúng định dạng.</string>
+    <string name="password_do_not_match">Mật khẩu không giống nhau.</string>
+    <string name="register">Đăng Ký</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="you_have_account">Bạn có tài khoản ?</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="email_or_password_incorrect">Tài khoản hoặc mật khẩu không đúng.</string>
+    <string name="description_format_password">Vui lòng nhập mật khẩu mới của bạn vào.</string>
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="send_email">Gửi email</string>
+    <string name="please_enter_your_email_to_recover_your_password">Vui lòng nhập email của bạn vào để lấy lại mật khẩu.</string>
+    <string name="go_to_login">Di chuyển đến đăng nhập</string>
+    <string name="send_email_success_description">Gửi email đã thành công\nVui lòng kiểm tra trong tin nhắn</string>
 </resources>

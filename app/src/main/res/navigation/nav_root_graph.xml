@@ -2,16 +2,53 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_root_graph.xml"
-    app:startDestination="@id/SplashFragment">
+    app:startDestination="@id/splashFragment">
+
     <fragment
-        android:id="@+id/SplashFragment"
+        android:id="@+id/splashFragment"
         android:name="com.nvqquy98.moneyqq.presentation.ui.splash.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment">
         <action
-            android:id="@+id/action_SplashFragment_to_LoginFragment"
-            app:destination="@id/LoginFragment" />
+            android:id="@+id/action_splashFragment_to_authenticationFragment"
+            app:destination="@+id/authenticationFragment"
+            app:enterAnim="@anim/transform_bottom_in"
+            app:exitAnim="@anim/transform_top_out"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"
+            app:enterAnim="@anim/transform_bottom_in"
+            app:exitAnim="@anim/transform_top_out"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
-    <fragment android:id="@+id/LoginFragment"
-        android:name="com.nvqquy98.moneyqq.presentation.ui.login.LoginFragment"
-        android:label="SplashFragment"/>
+
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.nvqquy98.moneyqq.presentation.ui.authentication.AuthenticationFragment"
+        android:label="AuthenticationFragment">
+        <action
+            android:id="@+id/action_authenticationFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"
+            app:enterAnim="@anim/transform_fade_in"
+            app:exitAnim="@anim/transform_fade_out"
+            app:popUpTo="@id/authenticationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nvqquy98.moneyqq.presentation.ui.main.HomeFragment"
+        android:label="HomeFragment">
+
+        <action
+            android:id="@+id/action_homeFragment_to_authenticationFragment"
+            app:destination="@+id/authenticationFragment"
+            app:enterAnim="@anim/transform_fade_in"
+            app:exitAnim="@anim/transform_fade_out"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath(ClassPaths.androidGradlePlugin)
         classpath(ClassPaths.kotlinGradlePlugin)
+        classpath(ClassPaths.navigationSafeArgs)
     }
 }
 
@@ -16,6 +17,6 @@ allprojects {
         mavenCentral()
     }
 }
-tasks.register("clean", Delete::class) {
+tasks.register<Delete>("clean", Delete::class.java) {
     delete(rootProject.buildDir)
 }

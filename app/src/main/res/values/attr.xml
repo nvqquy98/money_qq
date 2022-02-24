@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EdtCommonView">
+        <attr name="android:textColor" />
+        <attr name="android:hint" />
+        <attr name="android:textColorHint" />
+        <attr name="android:maxLength" />
+        <attr name="ecv_ic_start" format="reference" />
+        <attr name="ecv_type_text" format="enum">
+            <enum name="text" value="0" />
+            <enum name="email" value="1" />
+            <enum name="password" value="2" />
+            <enum name="multiLine" value="3" />
+        </attr>
+        <attr name="ecv_focused_color" format="color" />
+        <attr name="ecv_unfocused_color" format="color" />
+    </declare-styleable>
+</resources>

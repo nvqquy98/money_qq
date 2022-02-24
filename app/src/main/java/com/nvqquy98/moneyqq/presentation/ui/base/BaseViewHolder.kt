@@ -13,6 +13,6 @@ open class BaseViewHolder<T : Any, out B : ViewDataBinding> constructor(val bind
     }
 
     open fun bind(item: T) {
-        binding.setVariable(BR.item, item)
+//        binding.setVariable(BR.item, item)
     }
 }

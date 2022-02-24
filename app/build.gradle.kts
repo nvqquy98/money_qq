@@ -6,24 +6,24 @@ plugins {
     kotlin(Plugins.kotlinApt)
     id(Plugins.detekt).version(Versions.detekt)
     id(Plugins.parcelize)
+    id(Plugins.navigationKotlin)
 }
 buildscript {
 //    apply(from: "autodimension.gradle")
 }
 
-android {
-    compileSdkVersion(Versions.compileSdkVersion)
-    buildToolsVersion(Versions.buildToolsVersion)
+android(Action {
+    compileSdk = Versions.compileSdkVersion
     defaultConfig {
         applicationId = "com.nvqquy98.moneyqq"
-        minSdkVersion(Versions.minSDKVersion)
-        targetSdkVersion(Versions.targetSDKVersion)
+        minSdk = Versions.minSDKVersion
+        targetSdk = Versions.targetSDKVersion
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         renderscriptTargetApi = Versions.targetSDKVersion
         renderscriptNdkModeEnabled = true
-        consumerProguardFiles(file("proguard-rules.pro"))
     }
+
     signingConfigs {
 
     }
@@ -39,14 +39,15 @@ android {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
+        kotlinOptions(
+            Action {
+                jvmTarget = JavaVersion.VERSION_11.toString()
+            })
 
-        flavorDimensions("default")
+        flavorDimensions.add("default")
         productFlavors {
             create("develop") {
                 versionCode = 1
@@ -69,49 +70,52 @@ android {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
 
         tasks.withType<KotlinCompile> {
-            kotlinOptions.jvmTarget = "1.8"
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
         }
 
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        kotlinOptions(Action {
+            jvmTarget = JavaVersion.VERSION_11.toString()
             freeCompilerArgs = freeCompilerArgs
                 .plus("-Xopt-in=kotlin.RequiresOptIn")
                 .plus("-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi")
-        }
+        })
         buildFeatures {
             dataBinding = true
             viewBinding = true
         }
         packagingOptions {
-            exclude("META-INF/DEPENDENCIES")
-            exclude("META-INF/ASL2.0")
-            exclude("META-INF/AL2.0")
-            exclude("META-INF/LGPL2.1")
+            resources.excludes.addAll(
+                listOf(
+                    "META-INF/DEPENDENCIES", "META-INF/ASL2.0", "META-INF/AL2.0", "META-INF/LGPL2.1"
+                )
+            )
         }
     }
-}
+})
 tasks {
     withType<io.gitlab.arturbosch.detekt.Detekt> {
         // Target version of the generated JVM bytecode. It is used for type resolution.
-        this.jvmTarget = "1.8"
+        this.jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
-detekt {
+detekt(Action {
     config = files("$rootDir/config/detekt/detekt.yml")
     input = files("src/main/java")
-    reports {
-        html.enabled = true // observe findings in your browser with structure and code snippets
-        xml.enabled = false // checkstyle like format mainly for integrations like Jenkins
-        txt.enabled =
-            false // similar to the console output, contains issue signature to manually edit baseline files
-    }
-}
+    reports(Action {
+        // observe findings in your browser with structure and code snippets
+        html.enabled = true
+        // checkstyle like format mainly for integrations like Jenkins
+        xml.enabled = false
+        // similar to the console output, contains issue signature to manually edit baseline files
+        txt.enabled = false
+    })
+})
 dependencies {
     implementation(Deps.activity)
     implementation(Deps.activityKtx)
@@ -136,7 +140,6 @@ dependencies {
     implementation(Deps.coreKtx)
 
     implementation(Deps.lifecycleRuntime)
-    implementation(Deps.lifecycleExtensions)
     implementation(Deps.lifecycleViewModelKtx)
     implementation(Deps.lifecycleLiveDataKtx)
     implementation(Deps.lifecycleAnnotation)

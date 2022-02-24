@@ -8,7 +8,6 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="android:windowBackground">@drawable/background_app</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/zircon</item>
@@ -18,7 +17,7 @@
 
     <!-- Text View Style here -->
     <style name="TextCommonApp" parent="Theme.moneyqq">
-        <item name="android:textColor">@color/comet</item>
+        <item name="android:textColor">@color/mine_shaft</item>
         <item name="android:textSize">@dimen/dp_12</item>
     </style>
 
@@ -36,6 +35,30 @@
 
     <style name="TextViewMedium" parent="TextCommonApp">
         <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextViewRegular12" parent="TextViewRegular">
+        <item name="android:textSize">@dimen/dp_12</item>
+    </style>
+
+    <style name="TextViewMedium12" parent="TextViewMedium">
+        <item name="android:textSize">@dimen/dp_12</item>
+    </style>
+
+    <style name="TextViewMedium14" parent="TextViewMedium">
+        <item name="android:textSize">@dimen/dp_14</item>
+    </style>
+
+    <style name="TextViewBold14" parent="TextViewBold">
+        <item name="android:textSize">@dimen/dp_14</item>
+    </style>
+
+    <style name="TextViewBold20" parent="TextViewBold">
+        <item name="android:textSize">@dimen/dp_20</item>
+    </style>
+
+    <style name="TextViewBold26" parent="TextViewBold">
+        <item name="android:textSize">@dimen/dp_26</item>
     </style>
 
     <!-- Shadow view sytle here -->

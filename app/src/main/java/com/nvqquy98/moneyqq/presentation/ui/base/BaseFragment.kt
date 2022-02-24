@@ -9,9 +9,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import com.nvqquy98.moneyqq.BR
+import com.nvqquy98.moneyqq.R
+import com.nvqquy98.moneyqq.mainapp.MainViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.plus
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 abstract class BaseFragment<B : ViewDataBinding, V : BaseViewModel> : Fragment() {
     @get:LayoutRes
@@ -23,10 +27,13 @@ abstract class BaseFragment<B : ViewDataBinding, V : BaseViewModel> : Fragment()
 
     val scope = lifecycleScope.plus(CoroutineExceptionHandler { _, _ -> })
 
+    val mainViewModel: MainViewModel by sharedViewModel()
+
     val baseActivity by lazy {
         activity as BaseActivity<*, *>
     }
 
+    val navRootController get() = Navigation.findNavController(baseActivity, R.id.rootContainer)
 
     private var onDestinationChangedListener: OnDestinationChangedListener? = null
 
