@@ -1,23 +1,22 @@
 object Versions {
     /* android */
-    const val buildToolsVersion = "30.0.2"
-    const val compileSdkVersion = 30
-    const val gradlePlugin = "4.2.0"
-    const val kotlin = "1.5.10"
-    const val minSDKVersion = 26
-    const val targetSDKVersion = 30
+    const val compileSdkVersion = 31
+    const val gradlePlugin = "7.0.4"
+    const val kotlin = "1.6.10"
+    const val minSDKVersion = 24
+    const val targetSDKVersion = 31
 
     /* activity */
-    const val activity = "1.2.0-rc01"
+    const val activity = "1.4.0"
 
     /* appcompat */
-    const val appcompat = "1.2.0"
+    const val appcompat = "1.4.1"
 
     /* Code smell */
     const val detekt = "1.9.1"
 
     /* ConstrainLayout */
-    const val constraintLayout = "2.0.4"
+    const val constraintLayout = "2.1.3"
 
     /* Coroutines */
     const val coroutines = "1.4.2"
@@ -32,16 +31,16 @@ object Versions {
     const val koin = "3.0.1"
 
     /* ktx */
-    const val core = "1.3.2"
+    const val core = "1.7.0"
 
     /* Lifecycle */
-    const val lifecycle = "2.2.0"
+    const val lifecycle = "2.4.1"
 
     /* Material */
     const val material = "1.3.0"
 
     /* Navigation Component */
-    const val navigationComponent = "2.3.5"
+    const val navigationComponent = "2.4.1"
 
     /* OkHttp */
     const val okHttp3 = "4.9.0"
@@ -63,6 +62,8 @@ object Versions {
 object ClassPaths {
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val navigationSafeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
 }
 
 @Suppress("unused")
@@ -74,6 +75,7 @@ object Plugins {
     const val kotlinAndroid = "android"
     const val kotlinApt = "kapt"
     const val parcelize = "kotlin-parcelize"
+    const val navigationKotlin = "androidx.navigation.safeargs.kotlin"
 }
 
 object Mavens {}
@@ -112,7 +114,6 @@ object Deps {
 
     /* Lifecycle */
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}"
-    const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
     const val lifecycleAnnotation =
         "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
     const val lifecycleViewModelKtx =

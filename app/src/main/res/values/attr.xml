@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ConstraintLayoutCustom">
-        <attr name="topStartRadius" format="dimension" />
-        <attr name="topEndRadius" format="dimension" />
-        <attr name="bottomStartRadius" format="dimension" />
-        <attr name="bottomEndRadius" format="dimension" />
-        <attr name="topRadius" format="dimension" />
-        <attr name="bottomRadius" format="dimension" />
-        <attr name="startRadius" format="dimension" />
-        <attr name="endRadius" format="dimension" />
-        <attr name="radius" format="dimension" />
-        <attr name="blurShadow" format="dimension" />
-        <attr name="xShadow" format="float" />
-        <attr name="yShadow" format="float" />
-        <attr name="shadowColor" format="color" />
-        <attr name="backgroundFill" format="color" />
-        <attr name="arrow" format="enum">
-            <enum name="none" value="0" />
-            <enum name="top" value="1" />
-            <enum name="bottom" value="2" />
-            <enum name="both" value="3" />
+    <declare-styleable name="EdtCommonView">
+        <attr name="android:textColor" />
+        <attr name="android:hint" />
+        <attr name="android:textColorHint" />
+        <attr name="android:maxLength" />
+        <attr name="ecv_ic_start" format="reference" />
+        <attr name="ecv_type_text" format="enum">
+            <enum name="text" value="0" />
+            <enum name="email" value="1" />
+            <enum name="password" value="2" />
+            <enum name="multiLine" value="3" />
         </attr>
-        <attr name="isShadowHorizontal" format="boolean" />
-        <attr name="arrowSize" format="dimension" />
+        <attr name="ecv_focused_color" format="color" />
+        <attr name="ecv_unfocused_color" format="color" />
     </declare-styleable>
 </resources>

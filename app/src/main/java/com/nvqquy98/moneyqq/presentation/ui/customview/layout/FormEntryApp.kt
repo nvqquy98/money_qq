@@ -17,10 +17,9 @@ class FormEntryApp @JvmOverloads constructor(
         paint.color = Color.WHITE
         paint.strokeJoin = Paint.Join.ROUND
         paint.isAntiAlias = true
-        paint.strokeWidth = 5F
         paint.style = Paint.Style.FILL
         setLayerType(LAYER_TYPE_SOFTWARE, paint)
-        paint.pathEffect = CornerPathEffect(40F)
+        paint.pathEffect = CornerPathEffect(20F)
     }
 
 
@@ -28,12 +27,17 @@ class FormEntryApp @JvmOverloads constructor(
         canvas?.run {
             val height = height.toFloat()
             val width = width.toFloat()
-           val point = mutableListOf(40F to 40F, 40F to height-40F,width-40F to height-40F, width-40F to height * 0.35F-40F )
+            val point = mutableListOf(
+                20F to 20F,
+                20F to height - 20F,
+                width - 20F to height - 20F,
+                width - 20F to height * 0.35F - 20F
+            )
 
             path.run {
-                moveTo(120F,0F)
+                moveTo(60F, 0F)
                 point.forEach {
-                    lineTo(it.first,it.second)
+                    lineTo(it.first, it.second)
                 }
 
                 path.close();
@@ -42,5 +46,4 @@ class FormEntryApp @JvmOverloads constructor(
         }
         super.onDraw(canvas)
     }
-
 }
